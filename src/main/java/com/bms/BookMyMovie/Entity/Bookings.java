@@ -26,11 +26,15 @@ public class Bookings {
     private LocalDateTime bookingTime;
 
     @ManyToMany
-    @Column(name = "show_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private Users users;
 
+    @ManyToMany
+    @JoinColumn(name = "show_id", nullable = false)
+    private Shows show;
+
     @Column(nullable = false)
-    private Status status ; //CONFIRMED , CANCEL , PENDING
+    private String status ; //CONFIRMED , CANCEL , PENDING
 
     @Column(nullable = false)
     private Double totalAmount ;

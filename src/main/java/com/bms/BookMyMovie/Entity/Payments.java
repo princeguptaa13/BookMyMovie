@@ -31,7 +31,7 @@ public class Payments {
     private String paymentMethod ;
 
     @Column(nullable = false)
-    private Status status;
+    private String status;
 
     @OneToOne(mappedBy = "payment_id")
     private Bookings bookings;

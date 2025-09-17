@@ -1,19 +1,26 @@
 package com.bms.BookMyMovie.Dto;
 
-import com.bms.BookMyMovie.Entity.Payments;
 import com.bms.BookMyMovie.Entity.ShowSeats;
 import com.bms.BookMyMovie.Entity.Users;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class BookingDto {
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class BookingsDto {
     private Long id ;
     private LocalDateTime bookingTime;
-    private ShowDto showDto;
+    private ShowsDto showDto;
     private String bookingNumber;
-    private Users users;
+    private UsersDto users;
     private Double totalAmount;
-    private List<ShowSeats> showSeats;
-    private PaymentDto payment ;
+    private String status;
+    private List<ShowSeatsDto> showSeats;
+    private PaymentsDto payment ;
 }

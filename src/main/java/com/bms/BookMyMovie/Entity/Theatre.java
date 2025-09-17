@@ -15,13 +15,15 @@ import java.util.List;
 public class Theatre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id ;
+    private Long id ;
 
     private String name ;
 
     private String address ;
 
     private String city ;
+
+    private Integer totalScreens;
 
     @OneToMany(mappedBy = "theatre" , cascade = CascadeType.ALL)
     private List<Screen> screens;

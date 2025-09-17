@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface BookingRepository extends JpaRepository<BookingRepository,Long> {
+public interface BookingRepository extends JpaRepository<Bookings ,Long> {
 
     List<Bookings> findByUserid(Long userId);
 

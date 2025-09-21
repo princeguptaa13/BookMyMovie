@@ -137,9 +137,9 @@ public class BookingService {
             bookings.getPayment().setStatus("REFUNDED");
         }
 
-        Bookings updatebooking = bookingRepository.save(bookings);
+        Bookings updateBooking = bookingRepository.save(bookings);
         showSeatsRepository.saveAll(seats);
-        return mapToBookingDto(updatebooking , seats);
+        return mapToBookingDto(updateBooking , seats);
 
     }
 

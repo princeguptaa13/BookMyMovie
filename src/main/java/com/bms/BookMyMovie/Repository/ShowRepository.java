@@ -16,5 +16,7 @@ public interface ShowRepository extends JpaRepository<Shows , Long> {
     //made SQl query of between
     List<Shows> findByStartTimeBetween(LocalDateTime start , LocalDateTime end);
 
+    List<Shows> findByMovie_IdAndScreen_Theatre_City(Long movieId , String city);
+
 
 }

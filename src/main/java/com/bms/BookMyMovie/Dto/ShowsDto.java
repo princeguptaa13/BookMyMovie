@@ -16,5 +16,5 @@ public class ShowsDto {
     private LocalDateTime endTime;
     private MoviesDto movies;
     private ScreensDto screens;
-    private List<ShowsDto> availableSeats;
+    private List<ShowSeatsDto> availableSeats;
 }

@@ -191,7 +191,7 @@ public class BookingService {
         theatresDto.setTotalScreens(booking.getShow().getScreen().getTheatre().getTotalScreens());
 
         screensDto.setTheatres(theatresDto);
-        showsDto.setScreensDto(screensDto);
+        showsDto.setScreens(screensDto);
         bookingsDto.setShowDto(showsDto);
 
         List<ShowSeatsDto> seatsDto = seats.stream().map(seats1 ->{

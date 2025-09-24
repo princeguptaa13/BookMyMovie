@@ -18,6 +18,7 @@ public class Movies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
 
+    @Column(nullable = false)
     private String title;
 
     private String description ;
@@ -26,12 +27,12 @@ public class Movies {
 
     private String language;
 
-    private String duration ;
+    private Integer duration ;
 
     private String releaseDate ;
 
     private String posterUrl;
 
     @OneToMany(mappedBy = "movie" ,cascade = CascadeType.ALL)
-    private List<Shows> shows;
+    private List<Shows> show;
 }

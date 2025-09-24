@@ -106,7 +106,7 @@ public class BookingService {
         return mapToBookingDto(bookings , showSeats);
     }
     public List<BookingsDto> getBookingByUserId(Long userId){
-        List<Bookings> bookings = bookingRepository.findByUserid(userId);
+        List<Bookings> bookings = bookingRepository.findByUsers_Id(userId);
         return bookings.stream()
                 .map(bookings1 -> {
                     List<ShowSeats> seats = showSeatsRepository.findAll()
@@ -167,14 +167,14 @@ public class BookingService {
         showsDto.setEndTime(booking.getShow().getEndTime());
 
         MoviesDto moviesDto = new MoviesDto();
-        moviesDto.setMovieId(booking.getShow().getMovies().getId());
-        moviesDto.setTitle(booking.getShow().getMovies().getTitle());
-        moviesDto.setLanguage(booking.getShow().getMovies().getLanguage());
-        moviesDto.setGenre(booking.getShow().getMovies().getGenre());
-        moviesDto.setDescription(booking.getShow().getMovies().getDescription());
-        moviesDto.setReleaseDate(booking.getShow().getMovies().getReleaseDate());
-        moviesDto.setDurationMinutes(booking.getShow().getMovies().getDuration());
-        moviesDto.setPosterUrl(booking.getShow().getMovies().getPosterUrl());
+        moviesDto.setMovieId(booking.getShow().getMovie().getId());
+        moviesDto.setTitle(booking.getShow().getMovie().getTitle());
+        moviesDto.setLanguage(booking.getShow().getMovie().getLanguage());
+        moviesDto.setGenre(booking.getShow().getMovie().getGenre());
+        moviesDto.setDescription(booking.getShow().getMovie().getDescription());
+        moviesDto.setReleaseDate(booking.getShow().getMovie().getReleaseDate());
+        moviesDto.setDurationMinutes(booking.getShow().getMovie().getDuration());
+        moviesDto.setPosterUrl(booking.getShow().getMovie().getPosterUrl());
         showsDto.setMovies(moviesDto);
 
         //screen

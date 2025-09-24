@@ -40,7 +40,7 @@ public class ShowService {
         Screen screen = screenRepository.findById(showsDto.getScreens().getScreensId())
                 .orElseThrow((()-> new ResouceNotFoundException("Movie Not Found")));
 
-        show.setMovies(movie);
+        show.setMovie(movie);
         show.setScreen(screen);
         show.setStartTime(showsDto.getStartTime());
         show.setEndTime(showsDto.getEndTime());
@@ -112,14 +112,14 @@ public class ShowService {
         showsDto.setEndTime(shows.getEndTime());
 
         showsDto.setMovies(new MoviesDto(
-                shows.getMovies().getId(),
-                shows.getMovies().getTitle(),
-                shows.getMovies().getLanguage(),
-                shows.getMovies().getGenre(),
-                shows.getMovies().getDescription(),
-                shows.getMovies().getDuration(),
-                shows.getMovies().getReleaseDate(),
-                shows.getMovies().getPosterUrl()
+                shows.getMovie().getId(),
+                shows.getMovie().getTitle(),
+                shows.getMovie().getLanguage(),
+                shows.getMovie().getGenre(),
+                shows.getMovie().getDescription(),
+                shows.getMovie().getDuration(),
+                shows.getMovie().getReleaseDate(),
+                shows.getMovie().getPosterUrl()
         ));
 
         TheatresDto theatresDto = new TheatresDto(

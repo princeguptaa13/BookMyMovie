@@ -24,17 +24,20 @@ public class Shows {
     @Column(nullable = false)
     private LocalDateTime endTime;
 
-    @OneToMany(mappedBy = "show",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "show", cascade = CascadeType.ALL)
     private List<ShowSeats> showSeats;
+
 
     @ManyToOne
     @JoinColumn(name = "movie_id" , nullable = false)
-    private Movies movies;
+    private Movies movie;
 
     @ManyToOne
     @JoinColumn(name = "screen_id" , nullable = false)
     private Screen screen ;
 
-    @OneToMany(mappedBy = "show" ,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "show", cascade = CascadeType.ALL) // must match field in Bookings
     private List<Bookings> bookingsList;
+
+
 }

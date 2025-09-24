@@ -1,6 +1,6 @@
 package com.bms.BookMyMovie.Entity;
 
-import com.bms.BookMyMovie.Enums.Status;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,11 +25,11 @@ public class Bookings {
     @Column(nullable = false)
     private LocalDateTime bookingTime;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "show_id", nullable = false)
     private Shows show;
 
@@ -39,7 +39,7 @@ public class Bookings {
     @Column(nullable = false)
     private Double totalAmount ;
 
-    @OneToMany(mappedBy = "booking_id" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "booking" , cascade = CascadeType.ALL)
     private List<ShowSeats> showSeats;
 
     @OneToOne(cascade = CascadeType.ALL)

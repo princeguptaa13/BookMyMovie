@@ -29,10 +29,7 @@ public class Users {
     @Column(nullable = false)
     private String phoneNo;
 
-    @Column(nullable = false)
-    private Movies movies ;
-
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private List<Bookings> bookings;
 
 

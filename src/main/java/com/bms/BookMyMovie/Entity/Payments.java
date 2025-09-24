@@ -1,6 +1,6 @@
 package com.bms.BookMyMovie.Entity;
 
-import com.bms.BookMyMovie.Enums.Status;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,7 +33,7 @@ public class Payments {
     @Column(nullable = false)
     private String status;
 
-    @OneToOne(mappedBy = "payment_id")
+    @OneToOne(mappedBy = "payment")
     private Bookings bookings;
 
 

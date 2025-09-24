@@ -1,6 +1,6 @@
 package com.bms.BookMyMovie.Entity;
 
-import com.bms.BookMyMovie.Enums.Status;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class ShowSeats {
 
     @ManyToOne
     @JoinColumn(name = "shows_id" , nullable = false)
-    private Shows shows;
+    private Shows show;
 
     @ManyToOne
     @JoinColumn(name = "seat_id" , nullable = false)
